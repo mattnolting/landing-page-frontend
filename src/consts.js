@@ -1,15 +1,20 @@
 import React from 'react';
-import Automation from './components/Automation.svg';
+// import Automation from './components/Automation.svg';
 import Subscriptions from './components/Subscriptions.svg';
 import Cost from './components/Cost.svg';
-import Insights from './components/Insights.svg';
+// import Insights from './components/Insights.svg';
 import Migrations from './components/Migrations.svg';
-import Openshift from './components/Openshift.svg';
+// import Openshift from './components/Openshift.svg';
 import SAP from './components/SAP.svg';
 
-import insightsMarketing from './components/marketing/insightsMarketing.svg';
-import openShiftMarketing from './components/marketing/openShiftMarketing.svg';
-import ansibleMarketing from './components/marketing/ansibleMarketing.svg';
+// import insightsMarketing from './components/marketing/insightsMarketing.svg';
+// import openShiftMarketing from './components/marketing/openShiftMarketing.svg';
+// import ansibleMarketing from './components/marketing/ansibleMarketing.svg';
+
+import logoOpenShiftAppServices from './components/marketing/logo__osas.svg';
+import logoOpenShift from './components/marketing/logo__openshift.svg';
+import logoRHEL from './components/marketing/logo__rhel.svg';
+import logoAnsibleAutomation from './components/marketing/logo__ansible-automation.svg';
 
 // isDevPreview for developer previews
 // isPreview for technical previews
@@ -28,117 +33,146 @@ import ansibleMarketing from './components/marketing/ansibleMarketing.svg';
 
 export const activeTechnologies = [
   {
-    entitlement: 'insights',
+    id: 'OpenshiftAppServices',
+    // url: 'openshift',
+    // baseApp: '/',
+    // apps: {
+    //   'cluster manager': '/',
+    // },
+    // entitlement: 'openshift',
     marketing: true,
-    marketingImage: insightsMarketing,
+    marketingImage: logoOpenShiftAppServices,
+    marketingText: (
+      <div className="test">
+        A group of managed cloud services for Red Hat OpenShift Dedicated,
+        including OpenShift Streams for Apache Kafka,&nbsp;
+        <a
+          href="https://developers.redhat.com/products/rhoam/overview"
+          target="_blank"
+          rel="noreferrer"
+        >
+          OpenShift API Management,
+        </a>
+        &nbsp;and OpenShift Data Science.
+      </div>
+    ),
+    marketingUrls: null,
+    // image: Openshift,
+    // emptyTitle: 'Get Started with Openshift.',
+    // emptyID: 'openshift',
+    // emptyText:
+    //   "Test drive industry's leading container application platform in your browser, \
+    //     and see how easy it is to use Kubernetes in your organization today.",
+    // emptyAction: {
+    //   primary: {
+    //     title: 'Try it free',
+    //   },
+    // },
+    // title: 'OpenShift Cluster Manager',
+    // body: 'Install, register, and manage OpenShift® 4 clusters.',
+  },
+  {
+    marketing: true,
+    // id: 'Openshift',
+    // url: 'openshift',
+    // baseApp: '/',
+    // apps: {
+    //   'cluster manager': '/',
+    // },
+    // entitlement: 'openshift',
+    marketingImage: logoOpenShift,
     marketingText:
-      'Proactively identify and remediate threats to security, performance, and stability.',
+      "An enterprise Kubernetes container platform with full-stack automated operations to manage hybrid cloud and multicloud deployments.  ",
     marketingUrls: {
-      learnMore: 'https://www.redhat.com/en/technologies/management/insights',
+      tryIt: 'https://try.openshift.com',
     },
-    name: 'insights',
-    id: 'insights',
-    url: 'insights',
-    baseApp: '/dashboard',
-    apps: {
-      dashboard: '/dashboard',
-      patch: '/patch',
-      advisor: '/advisor',
-      drift: '/drift',
-      vulnerability: '/vulnerability',
-      policies: '/policies',
-      compliance: '/compliance',
-    },
-    image: Insights,
-    title: 'Insights',
-    emptyTitle:
-      'Insights is included with every Red Hat Enterprise Linux subscription',
-    emptyText:
-      'Proactively identify and remediate threats to security, performance, availability, \
-        and stability with Insights. Activate Insights to get started today.',
-    emptyID: 'insights',
-    emptyAction: {
-      primary: {
-        title: 'Get started',
-        navigate:
-          'https://www.redhat.com/wapps/eval/index.html?evaluation_id=1036',
-      },
-      close: {
-        title: 'Not now',
-      },
-    },
-    body:
-      'Identify and remediate configuration issues in your Red Hat® environments.',
+    // image: Openshift,
+    // emptyTitle: 'Get Started with Openshift.',
+    // emptyID: 'openshift',
+    // emptyText:
+    //   "Test drive industry's leading container application platform in your browser, \
+    //     and see how easy it is to use Kubernetes in your organization today.",
+    // emptyAction: {
+    //   primary: {
+    //     title: 'Try it free',
+    //   },
+    // },
+    // title: 'OpenShift Cluster Manager',
+    // body: 'Install, register, and manage OpenShift® 4 clusters.',
   },
   {
-    id: 'Openshift',
-    url: 'openshift',
-    baseApp: '/',
-    apps: {
-      'cluster manager': '/',
-    },
-    entitlement: 'openshift',
     marketing: true,
-    marketingImage: openShiftMarketing,
-    marketingText: 'Install, register, and manage OpenShift® 4 clusters.',
+    id: 'RHEL',
+    // url: 'rhel',
+    // baseApp: '/',
+    // apps: {
+    //   'cluster manager': '/',
+    // },
+    // entitlement: 'openshift',
+    marketingImage: logoRHEL,
+    marketingText: (
+      <span>
+        The leading enterprise Linux&reg; operating system, certified on
+        hundreds of clouds and with thousands of hardware vendors.
+      </span>
+    ),
     marketingUrls: {
-      learnMore: 'https://try.openshift.com',
+      tryIt: 'https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/try-it',
     },
-    image: Openshift,
-    emptyTitle: 'Get Started with Openshift.',
-    emptyID: 'openshift',
-    emptyText:
-      "Test drive industry's leading container application platform in your browser, \
-        and see how easy it is to use Kubernetes in your organization today.",
-    emptyAction: {
-      primary: {
-        title: 'Try it free',
-      },
-    },
-    title: 'OpenShift Cluster Manager',
-    body: 'Install, register, and manage OpenShift® 4 clusters.',
+    // image: Openshift,
+    // emptyTitle: 'Get Started with Openshift.',
+    // emptyID: 'openshift',
+    // emptyText:
+    //   "Test drive industry's leading container application platform in your browser, \
+    //     and see how easy it is to use Kubernetes in your organization today.",
+    // emptyAction: {
+    //   primary: {
+    //     title: 'Try it free',
+    //   },
+    // },
+    // title: 'OpenShift Cluster Manager',
+    // body: 'Install, register, and manage OpenShift® 4 clusters.',
   },
   {
-    id: 'Ansible',
-    entitlement: 'ansible',
-    url: 'ansible',
-    baseApp: '/automation-analytics',
-    image: Automation,
-    title: 'Ansible Automation Platform',
-    body:
-      'Extend your automation with analytics, content management, and policy and governance.',
-    apps: {
-      'automation analytics': '/automation-analytics',
-      'automation hub': '/automation-hub',
-      'automation services catalog': '/catalog',
-    },
     marketing: true,
-    marketingImage: ansibleMarketing,
+    id: 'AnsibleAutomation',
+    // entitlement: 'ansible',
+    // url: 'ansible',
+    // baseApp: '/automation-analytics',
+    // image: Automation,
+    // title: 'Ansible Automation Platform',
+    // body:
+    //   'Extend your automation with analytics, content management, and policy and governance.',
+    // apps: {
+    //   'automation analytics': '/automation-analytics',
+    //   'automation hub': '/automation-hub',
+    //   'automation services catalog': '/catalog',
+    // },
+    marketingImage: logoAnsibleAutomation,
     marketingText:
       'Extend your automation with analytics, policy and governance, and content management.',
     marketingUrls: {
-      learnMore: 'http://ansible.com/products/automation-platform',
       tryIt: 'https://www.redhat.com/en/technologies/management/ansible/try-it',
     },
-    emptyTitle:
-      'Ansible Automation Platform services requires a valid subscription',
-    emptyText:
-      'Get analytics and knowledge on your automation, access to certified content, and more with a \
-        Ansible Automation Platform subscription.',
-    emptyID: 'ansible',
-    emptyAction: {
-      // primary: {
-      //     title: 'Request an evaluation',
-      //     navigate: 'https://www.redhat.com/en/technologies/management/ansible/try-it'
-      // },
-      primary: {
-        title: 'Learn more',
-        navigate: 'https://www.ansible.com/products/automation-platform',
-      },
-      close: {
-        title: 'Not now',
-      },
-    },
+    // emptyTitle:
+    //   'Ansible Automation Platform services requires a valid subscription',
+    // emptyText:
+    //   'Get analytics and knowledge on your automation, access to certified content, and more with a \
+    //     Ansible Automation Platform subscription.',
+    // emptyID: 'ansible',
+    // emptyAction: {
+    //   // primary: {
+    //   //     title: 'Request an evaluation',
+    //   //     navigate: 'https://www.redhat.com/en/technologies/management/ansible/try-it'
+    //   // },
+    //   primary: {
+    //     title: 'Learn more',
+    //     navigate: 'https://www.ansible.com/products/automation-platform',
+    //   },
+    //   close: {
+    //     title: 'Not now',
+    //   },
+    // },
   },
   {
     id: 'subscriptions',

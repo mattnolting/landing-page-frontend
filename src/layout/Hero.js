@@ -1,38 +1,46 @@
-import { Button, PageSection, Title } from '@patternfly/react-core';
 import React from 'react';
 
+import {
+  Button,
+  Flex,
+  FlexItem,
+  PageSection,
+  Title,
+} from '@patternfly/react-core';
+import IconCloud from './images/icon__cloud-red.svg';
+import HeroIcon from '../components/HeroIcon.js';
 import './Hero.scss';
 
 const Hero = () => (
-  <PageSection className="ins-c-hero pf-m-fill pf-l-flex pf-m-align-items-center pf-m-justify-content-center">
-    <article className="pf-l-flex pf-m-column pf-m-align-items-center">
-      <Title
-        headingLevel="h1"
-        size="4xl"
-        className="ins-c-hero__title pf-m-spacer-lg"
-      >
-        Explore our open, multicloud tools
-      </Title>
-      <Title headingLevel="h2" className="ins-c-hero__sub-title pf-m-spacer-xl">
-        Discover Red Hat<sup className="ins-c-rball">®</sup>
-        software-as-a-service
-      </Title>
-      <Button
-        className="ins-c-hero__login"
-        onClick={() => window.insights.chrome.auth.login()}
-      >
-        Log in to your Red Hat account
-      </Button>
-      <Button
-        component="a"
-        isInline
-        variant="link"
-        className="ins-c-hero__new-customer"
-        href="https://www.redhat.com/en/customers"
-      >
-        Not a customer?
-      </Button>
-    </article>
+  <PageSection className="ins-c-hero pf-m-center" isWidthLimited>
+    <Flex className="pf-l-flex pf-m-column pf-m-align-items-center">
+      <FlexItem spacer={{ default: 'spacerMd', md: 'spacerXl' }}>
+        <HeroIcon src={IconCloud} alt="Insights Smart Management" />
+      </FlexItem>
+      <FlexItem spacer={{ default: 'spacerLg', md: 'spacerLg' }}>
+        <Title
+          headingLevel="h1"
+          className="ins-c-hero__title pf-u-font-weight-light"
+        >
+          Access your Red Hat subscriptions
+        </Title>
+      </FlexItem>
+      <FlexItem spacer={{ default: 'spacer2xl', md: 'spacer2xl' }}>
+        <Title headingLevel="h2" size="xl">
+          Operate, deploy, and manage application services and platforms
+        </Title>
+      </FlexItem>
+      <FlexItem>
+        <Button
+          className="ins-c-hero__login pf-m-primary"
+          variant="danger"
+          isLarge
+          onClick={() => window.insights.chrome.auth.login()}
+        >
+          Log in to your account
+        </Button>
+      </FlexItem>
+    </Flex>
   </PageSection>
 );
 

@@ -1,8 +1,31 @@
+@import '~@patternfly/patternfly/sass-utilities/_all';
+
 // App.scss
-.ins-c-landing-page .pf-c-page .pf-c-title {
-    // font-weight: 500;
+.pf-c-page__sidebar {
+    display: none;
+    visibility: hidden;
 }
 
-.pf-c-page__main {
-   display: block !important;
+.pf-c-page__main-section.pf-m-limit-width.pf-m-center .pf-c-page__main-body {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pf-c-page__main-section.ins-m-primary-color--200 {
+    --pf-c-page__main-section--BackgroundColor: var(--pf-global--primary-color--200);
+
+    color: var(--pf-global--Color--light-100);
+}
+
+#temp.pf-c-page__main,
+#no-access.pf-c-page__main {
+    height: auto !important;
+}
+
+// temp styles
+.pf-c-drawer__content,
+.ins-m-full-height {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }

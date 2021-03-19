@@ -2,20 +2,38 @@
 @import '~@patternfly/patternfly/sass-utilities/_all';
 
 .ins-c-hero {
+    --ins-c-hero--MinHeight: 0;
+    --pf-c-page__main-section--PaddingTop: var(--pf-global--spacer--2xl);
 
-    background: url("/apps/chrome/assets/images/fedora-background-left.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    transition: .6s;
+    min-height: var(--ins-c-hero--MinHeight);
 
-    h1.ins-c-hero__title { color: white; }
-
-    h2.ins-c-hero__sub-title { color: var(--pf-global--Color--200); }
-
-    @media screen and (min-width: $pf-global--breakpoint--xs) {
-        @include rem('min-height', 400px);
+    > * {
+        text-align: center;
     }
 
-    @media screen and (min-width: $pf-global--breakpoint--md) {
-        @include rem('min-height', 550px);
+    @media screen and (min-width: $pf-global--breakpoint--lg) {
+        @media screen and (min-height: 400px) {
+            --ins-c-hero--MinHeight: 300px;
+        }
+
+        @media screen and (min-height: 500px) {
+            --ins-c-hero--MinHeight: 450px;
+            --pf-c-page__main-section--PaddingTop: var(--pf-global--spacer--3xl);
+        }
+
+        @media screen and (min-height: 1000px) {
+            --ins-c-hero--MinHeight: 500px;
+            --pf-c-page__main-section--PaddingTop: var(--pf-global--spacer--3xl);
+        }
     }
+
+    &,
+    .pf-c-title {
+        color: var(--pf-global--Color--100);
+    }
+}
+
+.pf-c-title.ins-c-hero__title {
+    font-size: #{pf-size-prem(40px)};
 }

@@ -1,0 +1,6 @@
+@import '~@patternfly/patternfly/sass-utilities/_all';
+
+.ins-c-featured-product {
+    --pf-c-page__main-section--PaddingTop: var(--pf-global--spacer--3xl);
+    --pf-c-page__main-section--PaddingBottom: var(--pf-global--spacer--4xl);
+}

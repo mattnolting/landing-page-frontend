@@ -11,6 +11,7 @@ import {
 } from '@patternfly/react-core';
 import Marketing from '../layout/Marketing';
 import FooterTraditional from '../layout/FooterTraditional';
+import FooterMarketing from '../layout/FooterMarketing';
 import Loading from '../layout/Loading';
 import { activeTechnologies } from '../consts';
 import { addNotification } from '@redhat-cloud-services/frontend-components-notifications/redux';
@@ -107,18 +108,21 @@ const Landing = () => {
 
   if (isUserReady) {
     return (
-      <Split className="ins-c-page__landing-layout">
+      <Split className={`ins-c-page__landing-layout ${isUnauthed ? "ins-c-marketing-container" : ""}`}>
         <SplitItem className="ins-c-page__landing-content">
           {isUnauthed ? (
-            <Marketing />
+            <Fragment>
+              <Marketing />
+              <MarketingFooter />
+            </Fragment>
           ) : (
             <Fragment>
               <FirstPanel />
               <SecondPanel />
               <Footer />
+              <FooterTraditional />
             </Fragment>
           )}
-          <FooterTraditional />
           {notEntitled &&
             notEntitled.emptyAlertTitle &&
             renderAlert(notEntitled.emptyAlertTitle)}

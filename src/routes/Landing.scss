@@ -1,5 +1,8 @@
-@import '~@redhat-cloud-services/frontend-components-utilities/styles/_mixins';
 @import '~@patternfly/patternfly/sass-utilities/_all';
+@import '~@patternfly/patternfly/components/Alert/alert.scss';
+@import '~@redhat-cloud-services/frontend-components-notifications/index.css';
+@import '~@redhat-cloud-services/frontend-components-utilities/styles/_mixins';
+
 :root {
     --ins-global--Color--green: #37912f;
 }
@@ -20,7 +23,15 @@
 }
 
 .pf-c-card {
-    padding: var(--pf-global--spacer--md);
+    // base
+    --pf-c-card--child--base--Padding: var(--pf-global--spacer--xl);
+
+    // children
+    --pf-c-card--first-child--PaddingTop: var(--pf-c-card--child--base--Padding);
+    --pf-c-card--child--PaddingTop: var(--pf-c-card--child--base--Padding);
+    --pf-c-card--child--PaddingRight: var(--pf-c-card--child--base--Padding);
+    --pf-c-card--child--PaddingBottom: var(--pf-c-card--child--base--Padding);
+    --pf-c-card--child--PaddingLeft: var(--pf-c-card--child--base--Padding);
 
     &.ins-c-application-info {
         height: 100%;
@@ -42,7 +53,7 @@
         display: block;
         span { margin-right: 15px }
     }
-    
+
     .ins-c-application-info__content-applist {
         display: flex;
         flex-direction: column;
@@ -117,17 +128,32 @@ sup.ins-c-rball { @include rem('font-size', 10px); }
     }
 }
 
-// Adjust PF layout to be able to display witouth header
+// Adjust PF layout to be able to display without header
 .ins-c-page__landing-layout {
-    height: 100%;
+    // height: 100%;
+
     .ins-c-page__landing-navigation {
         flex-shrink: 0;
     }
-    .pf-l-split__item {
-        overflow-y: auto;
-    }
+
+    // .pf-l-split__item {
+    //     overflow-y: auto;
+    // }
 }
 
 .ins-c-page__landing-content {
-    width: 100%
+    // width: 100%
+}
+
+.ins-c-marketing-button {
+    --ins-c-marketing-button--FontSize: var(--pf-global--FontSize--lg);
+
+    --pf-c-button--FontSize: var(--ins-c-marketing-button--FontSize);
+    --pf-c-button__icon--m-end--MarginLeft: var(--pf-global--spacer--sm);
+
+    &.pf-m-link.pf-m-inline {
+        --pf-c-button--m-link--m-inline--FontSize: var(--ins-c-marketing-button--FontSize);
+    }
+
+    font-weight: var(--pf-global--FontWeight--bold);
 }
